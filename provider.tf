@@ -1,4 +1,7 @@
+ provider "aws" {
 
-  provider "aws" {
-     region = "eu-central-1"
-  }
+    shared_credentials_file = "~/.aws/credentials"
+    profile                 = "default"
+
+    region    		    = "eu-central-1"
+ }
