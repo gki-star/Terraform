@@ -46,7 +46,7 @@
 
 
  resource "aws_launch_configuration" "devops-web-lc" {
-   name 	   = "web-devops-sandbox-eu1-ha-lc"
+   name_prefix 	   = "web-devops-sandbox-eu1-ha-lc-"
    image_id 	   = data.aws_ami.amz_linux_latest.id
    instance_type   = "t2.micro"
 
@@ -62,7 +62,7 @@
 
  resource "aws_autoscaling_group" "devops-web-asg" {
 
-   name       	 	   = "web-devops-sandbox-eu1-ha-asg"
+   name		  	   = "ASG-${aws_launch_configuration.devops-web-lc.name}"
    launch_configuration    = aws_launch_configuration.devops-web-lc.name
    min_size 		   = 2
    max_size 		   = 2
