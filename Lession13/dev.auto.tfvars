@@ -1,6 +1,7 @@
+# 
 # file to autofill the variables
 #
-# 2 files can be named as
+# the files can be named as
 #   -  terraform.tfvars
 #   -  <name>.auto.tfvars
 #
